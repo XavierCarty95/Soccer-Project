@@ -1,5 +1,7 @@
 <h1> Teams </h1>
 
+<p> Hello ,  <%= current_user.username %> This is your team </p>
+
 <% @teams.each do |team| %> 
  <%= team.name %> , <%= team.location%> , <%= team.league.name%> <br>
 <% end %> 

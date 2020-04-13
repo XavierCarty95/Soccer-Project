@@ -20,10 +20,10 @@
     Player.create!(name: "Xavier" , goals: 28 , assists: 10)
     Player.create!(name: "Mason Mount" , goals: 21 , assists: 14)
     Player.create!(name: "Thierry Henry" , goals: 35 , assists: 8)
+    Player.create!(name: "Ronaldinho" , goals: 100 , assists: 80)
     
     Contract.create!(length: 1, team_id: 1, player_id: 1)
     Contract.create!(length: 2, team_id: 2, player_id: 2)
-    Contract.create!(length: 2, team_id: 2, player_id: 2)
     Contract.create!(length: 2, team_id: 3, player_id: 3)
-    Contract.create!(length: 2, team_id: 4, player_id: 4)
+    Contract.create!(length: 2, team_id: 3, player_id: 4)
     Contract.create!(length: 2, team_id: 1, player_id: 3)

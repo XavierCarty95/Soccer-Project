@@ -4,18 +4,19 @@ class SessionsController < ApplicationController
   def new
   end
 
-
   def login 
+     
+  
 
   end
 
   def create
 
-    @user = User.find_by(username: params[:username])
+    user = User.find_by(username: params[:username])
 
-    if @user && @user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
 
-      sessions[:user_id] = @user_id
+      session[:user_id] = user.id
 
       redirect_to  '/welcome'
 
@@ -25,6 +26,18 @@ class SessionsController < ApplicationController
 
     end 
   end
+
+  
+
+
+
+  def destroy 
+
+
+   session[:user_id] = nil 
+   redirect_to '/welcome'
+
+  end 
 
   def  page_requires_login 
       

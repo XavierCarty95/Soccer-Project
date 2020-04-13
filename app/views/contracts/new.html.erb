@@ -1,0 +1,9 @@
+<%= form_for @contract do |f| %> 
+<%= f.label :team_id %> 
+<%= f.collection_select :team_id , Team.all , :id , :name %> 
+<%= f.label :player_id %>
+<%= f.collection_select :player_id , Player.all , :id , :name %> 
+<%= f.label :length %> 
+<%= f.number_field :length %> 
+<%= f.submit %>
+<% end %> 

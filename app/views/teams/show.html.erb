@@ -2,8 +2,9 @@
 
 
 <% @team.players.each do |player| %> 
- Player: <%= player.name %> <br> 
+ Player: <%= link_to  player.name  ,  player_path(player.id) %> <br>
  Goals: <%= player.goals %> <br> 
  Assists: <%= player.assists %> <br>
+ 
 <% end %>
  
