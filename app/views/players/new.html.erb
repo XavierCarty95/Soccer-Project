@@ -1,0 +1,14 @@
+
+
+
+
+<h1> Add Play</h1>
+<%= form_for @player do |f|%>
+  <%= f.label :name  %><br>
+  <%= f.text_field :name%><br>
+  <%= f.label :goals %><br>
+  <%= f.number_field :goals %><br>
+  <%= f.label :assists %><br>
+  <%= f.number_field :assists %><br>
+  <%= f.submit %>
+<%end%>
