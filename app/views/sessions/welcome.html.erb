@@ -3,8 +3,7 @@
 <% if logged_in? %>
 
    <h1> You are Logged In, <%= current_user.username %></h1>
-   <%= button_to "Logout", '/logout', method: :delete %>
-   <%= link_to "teams"  ,  '/teams'  %>
+
 <% else %> 
 
 <%= button_to "Login" , '/login',  method: :get%>

@@ -3,15 +3,22 @@ class TeamsController < ApplicationController
         @teams = Team.all
     end
   
-    
-    def new
-    end
-  
-   
-  
     def show
         @team = Team.find(params[:id])
     end
+  
+    
+    def new
+        @team = Team.new
+    end
+  
+   
+    def create 
+
+      @team = Team.create!(name: params[:name] , location: params[:location])
+
+
+    end 
   
     
   

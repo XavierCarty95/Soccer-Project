@@ -1,8 +1,16 @@
-<h1  > Players</h1>
-<ul >
+ <div class="player-container">
+
+<h1 class = "players"> Players</h1>
+
 
 <% @players.each do |player| %> 
- <li > <%= player.name %> | <%= player.goals  %> | <%= player.assists  %>  </li>
+
+    <h4><b><%= link_to player.name , player_path(player.id) %></b></h4>
+    <span> <%= player.goals  %></p>
+    <span> <%= player.assists %></p>
+  </div>
+</div>
+
 <%end %> 
 
-</ul>
+ </div>

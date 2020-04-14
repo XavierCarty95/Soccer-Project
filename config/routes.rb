@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'sessions#welcome'
   delete '/logout', to: 'sessions#destroy'
   get '/authorized', to: 'sessions#page_requires_login'
- resources :teams , only: [:index , :create , :show , :edit]
+ resources :teams , only: [:index , :new ,  :create , :show , :edit]
  resources :contracts , only: [ :new , :create , :edit]
  resources :players , only: [:index , :create , :new ,  :show ,  :edit]
  resources :leagues , only: [:index , :create , :show , :edit]

@@ -1,5 +1,3 @@
 <%= @player.name %> 
 
-<h1> Team </h1>
   Team Name: <%= link_to @player.teams.last.name , team_path(@player.teams.last.id) %>
-

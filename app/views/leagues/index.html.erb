@@ -1,8 +1,12 @@
-<h1> League </h1>
+<div class = "league-container" > 
+
+<h1 class = "leagues"> League </h1>
 <ul>
 
 <% @leagues.each do |league_name| %> 
- <li> <%= league_name.name %> | <%= league_name.location %> </li>
+ <li class = "leagues"> <%= link_to league_name.name , league_path(league_name.id) %> | <%= league_name.location %> </li>
 <%end %> 
 
 </ul>
+
+</div>

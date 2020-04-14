@@ -1,7 +1,12 @@
-<h1> Teams </h1>
+<div class = "team-container"> 
 
-<p> Hello ,  <%= current_user.username %> This is your team </p>
+<h1 class = "teams"> Teams </h1>
 
+
+<ul> 
 <% @teams.each do |team| %> 
- <%= team.name %> , <%= team.location%> , <%= team.league.name%> <br>
+<li class = "teams"> <%= link_to team.name ,  team_path(team.id) %> , <%= team.league.name%> <br> </span>
 <% end %> 
+</ul> 
+
+</div>
