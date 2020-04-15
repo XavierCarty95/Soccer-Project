@@ -1,12 +1,13 @@
-<div class = "team-container"> 
 
-<h1 class = "teams"> Teams </h1>
+<div class = "container">
+<h1 class = "center-align"> Teams </h1>
 
 
-<ul> 
+<ul class = "center-align"> 
 <% @teams.each do |team| %> 
-<li class = "teams"> <%= link_to team.name ,  team_path(team.id) %> , <%= team.league.name%> <br> </span>
+<li > <%= link_to team.name ,  team_path(team.id) %> , <%= team.league.name%> <br> </span>
 <% end %> 
 </ul> 
-
 </div>
+
+

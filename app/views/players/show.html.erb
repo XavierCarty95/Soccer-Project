@@ -1,3 +1,18 @@
-<%= @player.name %> 
 
-  Team Name: <%= link_to @player.teams.last.name , team_path(@player.teams.last.id) %>
+<div class="row">
+<div class="col s12 m4">
+ <div class="card ">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= image_tag(@player.image_url, :class => "activator" ) %>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= @player.name %> <i class="material-icons right"> More Info </i></span>
+      <p>Team Name: <%= link_to @player.teams.last.name , team_path(@player.teams.last.id) %><p>
+    </div>
+    <div class="card-reveal cyan lighten-1">
+      <span class="card-title grey-text "> <%= @player_name %> <i class="material-icons right">close</i></span>
+      <p> Here is player <%= @player.name %>  , he has <%= @player.goals %> goals and <%= @player.assists %> </p>
+    </div>
+  </div>
+</div> 
+</div>

@@ -3,6 +3,7 @@ class Contract < ApplicationRecord
     belongs_to :team 
     belongs_to :player
 
-    validates :length, length: { in: 1..10 }
+    validates :length, numericality: {  
+    less_than_or_equal_to: 3 }
     
 end

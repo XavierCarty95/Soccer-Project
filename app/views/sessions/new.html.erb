@@ -9,3 +9,9 @@
 <%= submit_tag "Login"  , class: "button" %> 
 
 <%end %>
+
+<% if flash[:error] %>
+    <ul>
+        <li class="error"><%= flash[:error] %></li>
+    </ul>
+  <% end %>

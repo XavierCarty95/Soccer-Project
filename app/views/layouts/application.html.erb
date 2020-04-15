@@ -5,45 +5,45 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="menu">
-      <div class="container">
-        <nav class="logo">
-          <h2> Futbol Player Manager</h2>
-        </nav>
-        <nav class="right">
-          <%= link_to "Team", teams_path, class: "item" %>
-           <%= link_to "Player",  players_path, class: "item" %>
-            <%= link_to "Leagues", leagues_path, class: "item" %>
-             <%= link_to "Contract", new_contract_path, class: "item" %>
-          <span class="item">
 
-            <% if logged_in? %>
-              Welcome, <%= current_user.username %>!
-              <%= button_to "Log out", logout_path , method: :delete %>
+  <body> 
+ 
+    <nav>
+    <div class="nav-wrapper  cyan lighten-1">
+      <%= link_to "Football Manager" , "/welcome",  class:"brand-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" >
+        <li ><%= link_to "Teams", teams_path %></li>
+        <li> <%= link_to "Players",  players_path %></li>
+        <li> <%= link_to "Leagues", leagues_path %></li>
+         <li><%= link_to "Contract", new_contract_path %></li>
+          <% if logged_in? %>
+             <li>  Welcome, <%= current_user.username %>! <li>
+            <span class="waves-effect waves-light btn grey"><%= button_to "Log out", logout_path , method: :delete %> </span>
             <% else %>
-              <%= link_to "Log In", sessions_path %>
+            <li>  <%= link_to "Log In", sessions_path %> </li>
             <% end %>
-
-          </span>
-        </nav>
+          
+         
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+        <!-- Page Content goes here -->
+        <%= yield %> 
       </div>
-    </header>
-    <main>
-      <div class="container">
-        <%= yield %>
-      </div>
-
-    </main>
-    
-  </body>
-  <footer > 
+ 
+ <footer class = "cyan lighten-1"> 
 
       <p class = "copy-right" > Made By Xavier  </p>
     </footer>
-</html>
+  </body> 
+</html> 

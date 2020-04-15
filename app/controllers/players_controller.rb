@@ -30,7 +30,7 @@ class PlayersController < ApplicationController
 
   def player_params 
 
-  params.require(:player).permit(:name , :goals , :assists)
+  params.require(:player).permit(:name , :goals , :assists , :image_url)
 
   end 
 end

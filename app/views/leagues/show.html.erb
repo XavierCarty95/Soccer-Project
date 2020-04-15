@@ -1,4 +1,11 @@
-<div class = "league-container">
+<div class = "center-align">
 League : <%= @league.name %>
-<%= @league.location %>
+
+<ul class = "center-align"> 
+<% @league.teams.each do |team| %> 
+   
+   Teams: <%=link_to team.name , team_path(team.id) %> 
+
+<%end %>
+</ul>
 </div>

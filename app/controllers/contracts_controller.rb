@@ -7,7 +7,14 @@ class ContractsController < ApplicationController
 
   def create 
      @contract = Contract.create(contract_params)
+
+     if @contract.valid? 
      redirect_to team_path(@contract.team_id)
+
+     else 
+
+      redirect_to new_contract_path
+     end
   end 
   
 

@@ -1,10 +1,11 @@
-<h1> <%= @team.name %>  </h1> 
-
+<h2 class = "center-align "> <%= @team.name %>  </h1> 
+<ul class = "center-align">
 
 <% @team.players.each do |player| %> 
- Player: <%= link_to  player.name  ,  player_path(player.id) %> <br>
- Goals: <%= player.goals %> <br> 
- Assists: <%= player.assists %> <br>
+ <li> Player: <%= link_to  player.name  ,  player_path(player.id) %> </li>
+ <li> Goals: <%= player.goals %> </li> 
+ <li> Assists: <%= player.assists %> </li>
  
 <% end %>
+</ul>
  
