@@ -14,10 +14,14 @@ class PlayersController < ApplicationController
   end
 
   def create 
-  
-    @player = Player.create!(player_params)
-
+    @player = Player.create(player_params)
+    if @player.valid? 
     redirect_to players_path(@player)
+    else 
+      flash[:errors] = @player.errors.full_messages
+      redirect_to new_player_path
+     
+    end
 
   end 
 

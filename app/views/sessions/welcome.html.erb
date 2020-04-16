@@ -1,15 +1,15 @@
-<h1 class = "changed" > Welcome To Futbal Manager</h1> 
+<h1 class = "changed center-align" > Welcome To Futbal Manager</h1> 
 
 <% if logged_in? %>
 
-   <h1 class = "changed"> You are Logged In As: <span class = "user"> <%= current_user.username %> </span> </h1>
+   <h1 class = "changed center-align"> You are Logged In As: <span class = "user"> <%= current_user.username %> </span> </h1>
 
 <% else %> 
-
+<div class = "buttons">
 <span class = "waves-effect waves-light btn grey"> <%= button_to "Login" , '/login',  method: :get%></span>
-<span class = "waves-effect waves-light btn grey"> <%= button_to "Sign Up", '/users/new', method: :get%></span>
+<span class = "waves-effect waves-light btn grey "> <%= button_to "Sign Up", '/users/new', method: :get%></span>
 
-  
+  </div>
 
       
 <%end%>

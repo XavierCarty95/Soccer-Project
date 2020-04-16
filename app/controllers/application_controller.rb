@@ -23,9 +23,9 @@ helper_method :api
             
         end
 
-    def api 
+    def api(name)
 
-        url = URI("https://api-football-v1.p.rapidapi.com/v2/teams/league/2")
+        url = URI("https://api-football-v1.p.rapidapi.com/v2/leagues/country/#{name}/2019")
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE

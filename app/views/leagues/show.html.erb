@@ -4,12 +4,17 @@ League : <%= @league.name %>
 <ul class = "center-align"> 
 <% @league.teams.each do |team| %> 
    
-   Teams: <%=link_to team.name , team_path(team.id) %> 
+   Your Teams: <%=link_to team.name , team_path(team.id) %> 
 
 <%end %>
 </ul>
+      <h1 class = "changed" >  Leagues in <%= @league.location %> </h1>
+   <% @results["api"]["leagues"].each do |league_name| %>
+       
+         <h2> <%= league_name["name"] %> </h2>
+         <img src = <%=league_name["logo"] %> /> 
+         <li> Starts  <%= league_name["season_start"]   %> -  Ends <%= league_name["season_start"]   %> </li>
+        
 
-   <% api["api"]["teams"].each do |team|  %>
-      <p> <%= team["name"] %> </p>
-    <% end %>
+    <%end%>
 </div>

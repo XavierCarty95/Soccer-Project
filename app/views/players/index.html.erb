@@ -13,9 +13,11 @@
               <div class="card-content mar-bottom">
                <span> Names : <%=link_to player.name , player_path(player.id) %> </span> <br>
               <span>  Goals: <%= player.goals %> </span> <br> 
-              <span>  Assists: <%= player.assists %> </span>
+              <span>  Assists: <%= player.assists %> </span><br>
+              <br>
+               <span class="waves-effect waves-light btn grey center-align"><%= button_to "Delete", player_path(player.id) , method: :delete %> </span>
               </div>
-              <span class="waves-effect waves-light btn grey center-align"><%= button_to "Delete", player_path(player.id) , method: :delete %> </span>
+             
             </div>
           </div>
           <% end %>
