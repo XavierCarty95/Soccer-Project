@@ -1,17 +1,20 @@
-<h1> Welcome To The Soccer Stat Tracker</h1> 
+<h1 class = "changed" > Welcome To Futbal Manager</h1> 
 
 <% if logged_in? %>
 
-   <h1> You are Logged In, <%= current_user.username %></h1>
+   <h1 class = "changed"> You are Logged In As: <span class = "user"> <%= current_user.username %> </span> </h1>
 
 <% else %> 
 
 <span class = "waves-effect waves-light btn grey"> <%= button_to "Login" , '/login',  method: :get%></span>
 <span class = "waves-effect waves-light btn grey"> <%= button_to "Sign Up", '/users/new', method: :get%></span>
 
- 
+  
+
+      
 <%end%>
 
 
+  
 
 

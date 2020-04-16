@@ -12,15 +12,13 @@ class ContractsController < ApplicationController
      redirect_to team_path(@contract.team_id)
 
      else 
-
+      flash[:errors] = @contract.errors.full_messages
       redirect_to new_contract_path
      end
   end 
   
 
-def destroy 
-
-end 
+ 
 private 
 
   def contract_params 

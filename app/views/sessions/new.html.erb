@@ -6,9 +6,13 @@
 
 <%= label_tag :password %> 
 <%= password_field_tag :password %>
-<%= submit_tag "Login"  , class: "button" %> 
+<%= submit_tag "Login"  , class: "waves-effect waves-light btn grey" %> 
 
-<%end %>
+<%end %> 
+
+<br> 
+
+Dont Have An Account ? <span class = "waves-effect waves-light btn grey"> <%= button_to "Sign Up", '/users/new', method: :get%></span>
 
 <% if flash[:error] %>
     <ul>

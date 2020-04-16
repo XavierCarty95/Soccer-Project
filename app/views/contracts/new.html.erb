@@ -1,5 +1,14 @@
 
 <div class="container">
+<% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %> 
+        <li class ="red-text"><%= error %></li>
+    
+    <%end%>
+      </ul>
+  <% end %>
+    
   <div class="row center sign-up-form">
     <div class="col s12 m12 l12">
       <div class="card-panel">
@@ -39,10 +48,5 @@
       </div>
     </div>
   </div>
-<% if flash[:errors] %>
-    <ul>
-        <li class="error"><%= flash[:errors] %></li>
-    </ul>
-  <% end %>
-    
+
 </div>

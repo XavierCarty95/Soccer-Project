@@ -8,4 +8,8 @@ League : <%= @league.name %>
 
 <%end %>
 </ul>
+
+   <% api["api"]["teams"].each do |team|  %>
+      <p> <%= team["name"] %> </p>
+    <% end %>
 </div>

@@ -1,5 +1,5 @@
 
-
+<span class=" player waves-effect waves-light btn grey "><%= link_to "Add Player " , new_player_path %> </span>
 <div class="section">
       <div class="places-grid">
         <div class="row">
@@ -15,6 +15,7 @@
               <span>  Goals: <%= player.goals %> </span> <br> 
               <span>  Assists: <%= player.assists %> </span>
               </div>
+              <span class="waves-effect waves-light btn grey center-align"><%= button_to "Delete", player_path(player.id) , method: :delete %> </span>
             </div>
           </div>
           <% end %>
