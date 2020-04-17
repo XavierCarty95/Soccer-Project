@@ -3,7 +3,12 @@
 <% if logged_in? %>
 
    <h1 class = "changed center-align"> You are Logged In As: <span class = "user"> <%= current_user.username %> </span> </h1>
-
+   <div class = "center-align">
+   <span class = "waves-effect  waves-light btn grey "><div class ="must"><%= link_to "Visit Teams ", teams_path %></div></span>
+    <span class = "waves-effect waves-light btn grey"><div class ="must"><%= link_to " Visit Players",  players_path %></div></span>
+    <span class = "waves-effect waves-light btn grey"><div class ="must"> <%= link_to "Visit Leagues", leagues_path %></div></span>
+      
+    </div>
 <% else %> 
 <div class = "buttons">
 <span class = "waves-effect waves-light btn grey"> <%= button_to "Login" , '/login',  method: :get%></span>

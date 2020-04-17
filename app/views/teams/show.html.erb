@@ -20,7 +20,7 @@
                <span> Names : <%=link_to player.name , player_path(player.id) %> </span> <br>
               <span>  Goals: <%= player.goals %> </span> <br> 
               <span>  Assists: <%= player.assists %> </span><br>
-             <span>  Contract Length: <%= pluralize(player.contracts.first.length ,  'years')%></span>
+             <span>  Contract Length: <%= pluralize(player.contracts.first.length ,  'year')%></span>
               <br>
               </div>
              

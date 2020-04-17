@@ -143,3 +143,11 @@ li {
 
     margin-left: 200px;
 }
+
+.waves-effect .must input[type="submit"] {
+    color: white;
+}
+
+.must a {
+    color: white;
+}

@@ -1,3 +1,12 @@
+
+<% if flash[:error] %>
+    <ul>
+        <p style = "color: red"><%= flash[:error] %></p>
+    </ul>
+  <% end %>
+
+
+
 <h1> Login </h1> 
 
 <%= form_tag '/login' ,  class: "form"  do %> 
