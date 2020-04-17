@@ -1,20 +1,39 @@
 <div class = "center-align">
-League : <%= @league.name %>
+<h2> League : <%= @league.name %> </h2>
 
 <ul class = "center-align"> 
 <% @league.teams.each do |team| %> 
    
-   Your Teams: <%=link_to team.name , team_path(team.id) %> 
+   Your Team: <%=link_to team.name , team_path(team.id) %> 
 
 <%end %>
 </ul>
-      <h1 class = "changed" >  Leagues in <%= @league.location %> </h1>
-   <% @results["api"]["leagues"].each do |league_name| %>
-       
-         <h2> <%= league_name["name"] %> </h2>
-         <img src = <%=league_name["logo"] %> /> 
-         <li> Starts  <%= league_name["season_start"]   %> -  Ends <%= league_name["season_start"]   %> </li>
-        
 
-    <%end%>
 </div>
+
+<h2 class = "changed center-align" > Teams in <%= @league.location %> </h2>
+<div class="section">
+      <div class="places-grid">
+        <div class="row">
+          <% @results["api"]["teams"].each do |league_name| %>
+          <div class="col s4 l4 m4 places-holder">
+            <div class="card hoverable">
+              <div class="card-image circle responsive-img" width="50" height= "250.16px">
+                  <img src = <%=league_name["logo"] %> />
+                <span class="picture responsive-img"></span>
+              </div>
+              <div class="card-content mar-bottom">
+               <span> Name : <%= league_name["name"] %> </span> <br>
+              <span> Founded :  <%= league_name["founded"] %>  </span> <br> 
+              <span>   Venue:  <%= league_name["venue_name"]  %>  </span><br>
+              <span> Location: <%= league_name["venue_city"] %> </span> 
+              <br>
+              
+              </div>
+             
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+  </div>

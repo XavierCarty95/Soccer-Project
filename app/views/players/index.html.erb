@@ -1,5 +1,6 @@
 
 <span class=" player waves-effect waves-light btn grey "><%= link_to "Add Player " , new_player_path %> </span>
+    <span class="waves-effect waves-light btn grey center-align"><%= link_to "Sign Contract", new_contract_path , method: :get %> </span>
 <div class="section">
       <div class="places-grid">
         <div class="row">
@@ -11,10 +12,23 @@
                 <span class="picture responsive-img"></span>
               </div>
               <div class="card-content mar-bottom">
+              <% if player.contracts.first == nil %>
+               <span>  Contract Length: "Player has not signed a Contract" </span><br>
+               
+              <%end %>
+            
+               <% if player.contracts.first != nil %>
                <span> Names : <%=link_to player.name , player_path(player.id) %> </span> <br>
               <span>  Goals: <%= player.goals %> </span> <br> 
               <span>  Assists: <%= player.assists %> </span><br>
+              <span>  Team Name: <%= player.teams.last.name %> </span><br>
+              <span>  Contract Length: <%= pluralize(player.contracts.first.length ,  'years')%> </span><br>
+              <%end%>
               <br>
+              
+              
+                         
+              <span class="waves-effect waves-light btn grey center-align"><%= button_to "Edit Player", edit_player_path(player.id), method: :get %></span>
                <span class="waves-effect waves-light btn grey center-align"><%= button_to "Delete", player_path(player.id) , method: :delete %> </span>
               </div>
              

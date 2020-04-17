@@ -11,7 +11,8 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    @results = api(@league.location)
+    hash = { 1 => 2 , 2 => 30, 3 => 8  }
+    @results = api(hash[@league.id])
   end
 
   
