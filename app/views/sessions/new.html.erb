@@ -23,8 +23,3 @@
 
 Dont Have An Account ? <span class = "waves-effect waves-light btn grey"> <%= button_to "Sign Up", '/users/new', method: :get%></span>
 
-<% if flash[:error] %>
-    <ul>
-        <li class="error"><%= flash[:error] %></li>
-    </ul>
-  <% end %>

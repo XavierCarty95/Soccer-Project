@@ -49,6 +49,8 @@ line-height: 30px;
  .brand-logo {
     margin-left: 20px;
 
+    font-family: 'Baloo Bhaina 2', cursive;
+
  }
 
  #nav-mobile {
@@ -122,7 +124,7 @@ a {
 
 .single-row {
     margin-left: 400px;
-    margin-top: 100px;
+    margin-top: 40px;
     width: 1000px;
 }
 

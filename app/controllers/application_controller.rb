@@ -4,6 +4,7 @@ before_action :authorized
 helper_method :current_user
 helper_method :logged_in?
 helper_method :api
+BLOG_API_KEY = ENV['blog_api_key'] 
     def current_user 
      
         User.find_by(id: session[:user_id])
@@ -32,7 +33,7 @@ helper_method :api
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         request = Net::HTTP::Get.new(url)
         request["x-rapidapi-host"] = 'api-football-v1.p.rapidapi.com'
-        request["x-rapidapi-key"] = 'e2a6a5a7a5msh205f51dc28acb98p1ae29ajsn7662dae6283c'
+        request["x-rapidapi-key"] = BLOG_API_KEY
         response = http.request(request)
         
         return parse = JSON.parse(response.read_body)
